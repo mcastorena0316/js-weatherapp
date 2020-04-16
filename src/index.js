@@ -16,9 +16,4 @@ const defaultRender = (e) => {
 };
 
 
-window.addEventListener('load', (e) => {
-  defaultRender(e);
-});
-
-
 defaultRender();

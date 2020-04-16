@@ -34,6 +34,7 @@ const displayWeather = (e) => {
     })
     .catch(() => {
       renderReject();
+      document.getElementById('cityinput').defaultValue = '';
     });
 };
 
