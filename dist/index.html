@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
@@ -13,15 +14,24 @@
         <div class='main'>
             <div class= 'main-content'>
                 <div class="row no-gutters">
-                    <form id="cityform">
-                        <div class="form-group">
-                          <label for="cityinput">Please write a City</label>
-                          <input type="text" class="form-control" id="cityinput">
+                    <div class="col-12 card text-white bg-info mb-3" style="max-width: 30rem;">
+                        <div class="card-header">
+                            <form id="cityform">
+                                <div class="form-group">
+                                <label for="cityinput" class="city-input">Please write the name of a city</label>
+                                <input type="text" class="form-control" id="cityinput">
+                                </div>
+                                <div class="buttons-group">
+                                    <button type="button" id="city-cel-btn" class="btn btn-light">Temperature in °C</button>
+                                    <button type="button" id="city-far-btn" class="btn btn-light">Temperature in °F</button>
+                                </div>
+                            </form>
                         </div>
-                        <button type="button" id="city-cel-btn" class="btn btn-primary">Temperature in °C</button>
-                        <button type="button" id="city-far-btn" class="btn btn-primary">Temperature in °F</button>
-
-                    </form>
+                        <div class="card-body" id="weather-info">
+                            <div id="city-info" class="city-info">
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>

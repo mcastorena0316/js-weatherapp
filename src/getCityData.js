@@ -1,3 +1,5 @@
+import { format } from 'date-fns';
+
 const getData = async (e) => {
   const apiKey = '341e5fb009a47c51740d86b5945df4be';
   const url = 'https://api.openweathermap.org/data/2.5/weather';
@@ -6,17 +8,30 @@ const getData = async (e) => {
   const fetchingURL = `${url}?q=${city}&units=${degree}&appid=${apiKey}`;
 
   try {
-    const response = await fetch(fetchingURL);
+    const response = await fetch(fetchingURL, {
+      mode: 'cors',
+    });
     if (response.ok) {
       const jsonResponse = await response.json();
-      console.log(jsonResponse);
-      return jsonResponse;
+
+      const cityName = jsonResponse.name;
+      const temperatureInfo = jsonResponse.main;
+
+      const weatherInfo = jsonResponse.weather[0];
+
+      const cityInfo = {};
+      cityInfo.name = cityName;
+      cityInfo.temperature = temperatureInfo;
+      cityInfo.weather = weatherInfo;
+      cityInfo.date = format(new Date(), 'dd MMM yyyy');
+
+      return cityInfo;
     }
     throw new Error('Request Failed!');
   } catch (error) {
-    console.log(error);
     return error;
   }
 };
+
 
 export default getData;
