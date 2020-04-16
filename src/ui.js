@@ -8,12 +8,12 @@ const renderResolve = (e, city) => {
   <p> ${city.date}</p>
   <div class="temperature-info">
     <img src="http://openweathermap.org/img/wn/${city.weather.icon}@2x.png" alt="${city.weather.icon}"><img>
-    <h1>${city.temperature.temp}${e.target.innerText.slice(-2)} </h1>
+    <h1>${city.temperature.temp}${city.degree} </h1>
   </div>
-  <h5> Min:${city.temperature.temp_min}${e.target.innerText.slice(-2)}/ Max:${city.temperature.temp_max}${e.target.innerText.slice(-2)}</h5>
+  <h5> Min:${city.temperature.temp_min}${city.degree}/ Max:${city.temperature.temp_max}${city.degree}</h5>
   <div class="details">
   <h5>Details</h5>
-    <p>Feels like: ${city.temperature.feels_like} ${e.target.innerText.slice(-2)} </p>
+    <p>Feels like: ${city.temperature.feels_like} ${city.degree} </p>
     <p>Humidity: ${city.temperature.humidity} %</p>
     <p>Pressure: ${city.temperature.pressure} hpA</p>
   </div>`;
@@ -28,7 +28,7 @@ const renderReject = () => {
 };
 
 const displayWeather = (e) => {
-  getData(e)
+  getData(e, document.getElementById('cityinput').value)
     .then(city => {
       renderResolve(e, city);
     })
@@ -38,4 +38,4 @@ const displayWeather = (e) => {
 };
 
 
-export default displayWeather;
+export { displayWeather, renderResolve, renderReject };
