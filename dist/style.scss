@@ -3,8 +3,6 @@ body {
   background-size: cover;
   background-color: lightblue;
   background-blend-mode: screen;
-  // background-size: 90%;
-
 
   .wrapper {
 
@@ -13,49 +11,46 @@ body {
     justify-content: center;
     text-align: center;
 
-    .card{
-        margin-top: 5rem;
+      .card{
+          margin-top: 5rem;
 
-      .form-group {
-        .city-input {
-          font-family: 'Poppins', sans-serif;
-          font-size: 1.3rem
-        }
-      }
-
-      .buttons-group {
-        margin-top: 1rem;
-        margin-bottom: .5rem;
-        display: flex;
-        justify-content: center;
-        :first-child {
-            margin-right:1rem 
-        }
-      }
-        
-      .card-body{
-        // display:none;
-        .city-info{
-          .temperature-info {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 1rem;
-          }
-          .details {
-            margin-top: 1rem;
-            h4 {
-            margin: 0;
-            }
-            p {
-            margin: 0;
-            }
+        .form-group {
+          .city-input {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.3rem
           }
         }
-      }
-    }
-  }
 
-      
+        .buttons-group {
+          margin-top: 1rem;
+          margin-bottom: .5rem;
+          display: flex;
+          justify-content: center;
+          :first-child {
+              margin-right:1rem 
+          }
+        }
+          
+        .card-body{
+          .city-info{
+            .temperature-info {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-bottom: 1rem;
+            }
+            .details {
+              margin-top: 1rem;
+              h4 {
+              margin: 0;
+              }
+              p {
+              margin: 0;
+              }
+            }
+          }
+        }
+      }
+    } 
   }
 }

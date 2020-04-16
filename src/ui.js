@@ -19,7 +19,6 @@ const renderResolve = (e, city) => {
 };
 
 const renderReject = () => {
-  // document.querySelector('.card-body').style.display = 'block';
   const divInfo = document.getElementById('city-info');
   divInfo.innerHTML = `
   <h4>Couldnt find city, please type another one!</h4>`;
@@ -75,6 +74,7 @@ const displayWeather = (e) => {
     .catch(() => {
       renderReject();
       document.getElementById('cityinput').defaultValue = '';
+      document.body.style.backgroundImage = 'none';
     });
 };
 
