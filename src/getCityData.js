@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import { format } from 'date-fns';
 
 const getData = async (e, cityname) => {
