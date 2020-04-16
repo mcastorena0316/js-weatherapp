@@ -1,4 +1,11 @@
-.wrapper .main-content {
+body {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: lightblue;
+  background-blend-mode: screen;
+}
+
+body .wrapper .main-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8,16 +15,16 @@
   text-align: center;
 }
 
-.wrapper .main-content .card {
+body .wrapper .main-content .card {
   margin-top: 5rem;
 }
 
-.wrapper .main-content .card .form-group .city-input {
+body .wrapper .main-content .card .form-group .city-input {
   font-family: 'Poppins', sans-serif;
   font-size: 1.3rem;
 }
 
-.wrapper .main-content .card .buttons-group {
+body .wrapper .main-content .card .buttons-group {
   margin-top: 1rem;
   margin-bottom: .5rem;
   display: -webkit-box;
@@ -28,11 +35,11 @@
           justify-content: center;
 }
 
-.wrapper .main-content .card .buttons-group :first-child {
+body .wrapper .main-content .card .buttons-group :first-child {
   margin-right: 1rem;
 }
 
-.wrapper .main-content .card .card-body .city-info .temperature-info {
+body .wrapper .main-content .card .card-body .city-info .temperature-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -45,15 +52,15 @@
   margin-bottom: 1rem;
 }
 
-.wrapper .main-content .card .card-body .city-info .details {
+body .wrapper .main-content .card .card-body .city-info .details {
   margin-top: 1rem;
 }
 
-.wrapper .main-content .card .card-body .city-info .details h4 {
+body .wrapper .main-content .card .card-body .city-info .details h4 {
   margin: 0;
 }
 
-.wrapper .main-content .card .card-body .city-info .details p {
+body .wrapper .main-content .card .card-body .city-info .details p {
   margin: 0;
 }
 /*# sourceMappingURL=style.css.map */

@@ -19,12 +19,14 @@ const getData = async (e, cityname) => {
 
       const weatherInfo = jsonResponse.weather[0];
 
-      const cityInfo = {};
-      cityInfo.name = cityName;
-      cityInfo.temperature = temperatureInfo;
-      cityInfo.weather = weatherInfo;
-      cityInfo.degree = degree === 'metric' ? '°C' : '°F';
-      cityInfo.date = format(new Date(), 'dd MMM yyyy');
+      const cityInfo = {
+        name: cityName,
+        temperature: temperatureInfo,
+        weather: weatherInfo,
+        degree: degree === 'metric' ? '°C' : '°F',
+        date: format(new Date(), 'dd MMM yyyy'),
+
+      };
 
       return cityInfo;
     }

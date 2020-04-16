@@ -1,4 +1,4 @@
-import { displayWeather, renderResolve } from './ui';
+import { displayWeather, renderResolve, renderBackground } from './ui';
 import getData from './getCityData';
 
 
@@ -12,6 +12,7 @@ const defaultRender = (e) => {
   getData(e, 'Monterrey')
     .then(city => {
       renderResolve(e, city);
+      renderBackground(city);
     });
 };
 
