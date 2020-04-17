@@ -1,17 +1,18 @@
 import getData from './getCityData';
 
-const renderResolve = (e, city) => {
+const renderResolve = (city) => {
+  document.querySelector('.weather-info').style.display = 'block';
   const divInfo = document.getElementById('city-info');
   divInfo.innerHTML = `
   <h2>${city.name}</h2>
   <p> ${city.date}</p>
   <div class="temperature-info">
-    <img src="http://openweathermap.org/img/wn/${city.weather.icon}@2x.png" alt="${city.weather.icon}"><img>
+    <img src="http://openweathermap.org/img/wn/${city.weather.icon}@2x.png" alt="${city.weather.icon}" class= "circle-icon"><img>
     <h1>${city.temperature.temp}${city.degree} </h1>
   </div>
-  <h5> Min:${city.temperature.temp_min}${city.degree}/ Max:${city.temperature.temp_max}${city.degree}</h5>
+  <h5> Min:${city.temperature.temp_min}${city.degree} / Max:${city.temperature.temp_max}${city.degree}</h5>
   <div class="details">
-  <h5>Details</h5>
+  <h4>Details</h4>
     <p>Feels like: ${city.temperature.feels_like} ${city.degree} </p>
     <p>Humidity: ${city.temperature.humidity} %</p>
     <p>Pressure: ${city.temperature.pressure} hpA</p>
@@ -19,6 +20,7 @@ const renderResolve = (e, city) => {
 };
 
 const renderReject = () => {
+  document.querySelector('.card-body').style.display = 'block';
   const divInfo = document.getElementById('city-info');
   divInfo.innerHTML = `
   <h4>Couldnt find city, please type another one!</h4>`;
@@ -26,6 +28,7 @@ const renderReject = () => {
 };
 
 const renderBackground = (city) => {
+  document.body.style.backgroundColor = 'lightblue';
   const weatherToSearch = city.weather.main;
   switch (weatherToSearch) {
     case 'Rain':
@@ -66,17 +69,17 @@ const renderBackground = (city) => {
 };
 
 const displayWeather = (e) => {
-  getData(e, document.getElementById('cityinput').value)
+  getData(e)
     .then(city => {
-      renderResolve(e, city);
+      renderResolve(city);
       renderBackground(city);
     })
     .catch(() => {
       renderReject();
       document.getElementById('cityinput').defaultValue = '';
-      document.body.style.backgroundImage = 'none';
+      document.body.style.backgroundColor = 'white';
     });
 };
 
 
-export { displayWeather, renderResolve, renderBackground };
+export default displayWeather;
