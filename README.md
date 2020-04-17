@@ -13,7 +13,7 @@
 ## About The Project
 In this project, I created a  weather forecast site using an API from Open Weather API. You can search for the weather in any city you want and it will display the data in Fahrenheit or Celsius.
 
-Live version of the project: [Live version](https://rawcdn.githack.com/mcastorena0316/js-weatherapp/7b92c8dfff36e9af9b6c43150dc9748a17e742a1/dist/index.html)
+Live version of the project: [Live version](https://raw.githack.com/mcastorena0316/js-weatherapp/api-requests/dist/index.html)
 
 Project Link: [JS-WEATHERAPP](https://github.com/mcastorena0316/js-weatherapp)
 
